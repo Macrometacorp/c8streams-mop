@@ -30,8 +30,8 @@ MQTT-on-Pulsar (aka MoP) was developed to support MQTT protocol natively on Apac
 1. clone this project from GitHub to your local.
 
 ```bash
-git clone https://github.com/streamnative/mop.git
-cd mop
+git clone https://github.com/Macrometacorp/c8streams-mop.git
+cd c8streams-mop
 ```
 
 2. build the project.
@@ -41,8 +41,14 @@ mvn clean install -DskipTests
 
 3. the nar file can be found at this location.
 ```bash
-./mqtt-impl/target/pulsar-protocol-handler-mqtt-${version}.nar
+./mqtt-impl/target/mop-${version}.nar
 ```
+4. deploy the built artifacts (nar/pom) to Maven repo
+
+```bash
+./mqtt-impl/mvn clean deploy
+```
+
 
 ### Install MoP protocol handler
 All what you need to do is to configure the Pulsar broker to run the Mop protocol handler as a plugin, that is,
