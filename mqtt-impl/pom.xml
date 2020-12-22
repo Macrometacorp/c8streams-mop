@@ -17,22 +17,21 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-	
-	<modelVersion>4.0.0</modelVersion>
-	
-	<parent>
-		<groupId>co.macrometa.c8streams.handlers</groupId>
-		<artifactId>mop-parent</artifactId>
-		<version>0.2.0</version>
-	</parent>
 
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>co.macrometa.c8streams.handlers</groupId>
+        <artifactId>mop-parent</artifactId>
+        <version>0.3.0</version>
+    </parent>
+	
     <packaging>nar</packaging>
 	
-	<groupId>co.macrometa.c8streams.handlers</groupId>
-	<artifactId>mop</artifactId>
-	<name>Macrometa :: Pulsar Protocol Handler :: MQTT </name>
-	<description>MQTT on Pulsar implemented using Pulsar Protocol Handler</description>
-
+    <groupId>co.macrometa.c8streams.handlers</groupId>
+    <artifactId>mop</artifactId>
+    <name>Macrometa :: Pulsar Protocol Handler :: MQTT</name>
+    <description>MQTT on Pulsar implemented using Pulsar Protocol Handler</description>
 
 	<developers>
 		<developer>
@@ -45,14 +44,14 @@
 		<url>https://github.com/Macrometacorp/c8streams-mop.git</url>
 		<connection>scm:git:git@github.com:Macrometacorp/c8streams-mop.git</connection>
 		<developerConnection>scm:git:git@github.com:Macrometacorp/c8streams-mop.git</developerConnection>
-		<tag>mop-0.2.0</tag>
+		<tag>mop-0.3.0</tag>
 	</scm>
 
 	<organization>
 		<name>Macrometa</name>
 		<url>https://www.macrometa.co</url>
 	</organization>
-
+	
 	<distributionManagement>
 		<snapshotRepository>
 			<id>ossrh</id>
@@ -70,27 +69,27 @@
 			<url>https://oss.sonatype.org/content/groups/staging</url>
 		</repository>
 	</repositories>
-	
-	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.apache.nifi</groupId>
-				<artifactId>nifi-nar-maven-plugin</artifactId>
-				<version>1.2.0</version>
-				<extensions>true</extensions>
-				<configuration>
-					<finalName>${project.artifactId}-${project.version}</finalName>
-				</configuration>
-				<executions>
-					<execution>
-						<id>default-nar</id>
-						<phase>package</phase>
-						<goals>
-							<goal>nar</goal>
-						</goals>
-					</execution>
-				</executions>
-			</plugin>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.nifi</groupId>
+                <artifactId>nifi-nar-maven-plugin</artifactId>
+                <version>1.2.0</version>
+                <extensions>true</extensions>
+                <configuration>
+                    <finalName>${project.artifactId}-${project.version}</finalName>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>default-nar</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>nar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
 
 			<plugin>
 				<artifactId>maven-deploy-plugin</artifactId>
@@ -143,7 +142,8 @@
 						</goals>
 					</execution>
 				</executions>
-			</plugin>      
-		</plugins>
-	</build>
+			</plugin>
+
+        </plugins>
+    </build>
 </project>
