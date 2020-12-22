@@ -17,22 +17,24 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <parent>
-        <artifactId>pulsar-protocol-handler-mqtt-parent</artifactId>
-        <groupId>co.macrometa.c8streams.pulsar.handlers</groupId>
-        <version>0.2.0-SNAPSHOT</version>
-    </parent>
+
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>co.macrometa.c8streams.pulsar.handlers</groupId>
-    <artifactId>pulsar-protocol-handler-mqtt-tests</artifactId>
+    <parent>
+        <groupId>co.macrometa.c8streams.handlers</groupId>
+        <artifactId>mop-parent</artifactId>
+        <version>0.2.0</version>
+    </parent>
+
+    <groupId>co.macrometa.c8streams.handlers</groupId>
+    <artifactId>mop-tests</artifactId>
     <name>Macrometa :: Pulsar Protocol Handler :: MQTT Tests</name>
     <description>Tests for MQTT on Pulsar</description>
 
     <dependencies>
         <dependency>
-            <groupId>co.macrometa.c8streams.pulsar.handlers</groupId>
-            <artifactId>pulsar-protocol-handler-mqtt</artifactId>
+            <groupId>co.macrometa.c8streams.handlers</groupId>
+            <artifactId>mop</artifactId>
             <version>${project.version}</version>
             <scope>test</scope>
         </dependency>
@@ -70,7 +72,7 @@
                         <configuration>
                             <tasks>
                                 <echo>copy protocol handler</echo>
-                                <copy file="${basedir}/../mqtt-impl/target/pulsar-protocol-handler-mqtt-${project.version}.nar"
+                                <copy file="${basedir}/../mqtt-impl/target/mop-${project.version}.nar"
                                       tofile="${basedir}/src/test/resources/test-protocol-handler.nar"/>
                             </tasks>
                         </configuration>

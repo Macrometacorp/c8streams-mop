@@ -17,15 +17,20 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-	<parent>
-		<artifactId>pulsar-protocol-handler-mqtt-parent</artifactId>
-		<groupId>co.macrometa.c8streams.pulsar.handlers</groupId>
-		<version>0.2.0-SNAPSHOT</version>
-	</parent>
+	
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>co.macrometa.c8streams.pulsar.handlers</groupId>
-	<artifactId>pulsar-protocol-handler-mqtt</artifactId>
-	<name>Macrometa :: Pulsar Protocol Handler :: MQTT</name>
+	
+	<parent>
+		<groupId>co.macrometa.c8streams.handlers</groupId>
+		<artifactId>mop-parent</artifactId>
+		<version>0.2.0</version>
+	</parent>
+
+    <packaging>nar</packaging>
+	
+	<groupId>co.macrometa.c8streams.handlers</groupId>
+	<artifactId>mop</artifactId>
+	<name>Macrometa :: Pulsar Protocol Handler :: MQTT </name>
 	<description>MQTT on Pulsar implemented using Pulsar Protocol Handler</description>
 
 
@@ -37,10 +42,10 @@
 	</developers>
 
 	<scm>
-		<url>https://github.com/Macrometacorp/c8stream-kop.git</url>
-		<connection>scm:git:git@github.com:Macrometacorp/c8stream-kop.git</connection>
-		<developerConnection>scm:git:git@github.com:Macrometacorp/c8stream-kop.git</developerConnection>
-		<tag>pulsar-protocol-handler-kafka-2.6.2.0</tag>
+		<url>https://github.com/Macrometacorp/c8streams-mop.git</url>
+		<connection>scm:git:git@github.com:Macrometacorp/c8streams-mop.git</connection>
+		<developerConnection>scm:git:git@github.com:Macrometacorp/c8streams-mop.git</developerConnection>
+		<tag>mop-0.2.0</tag>
 	</scm>
 
 	<organization>
