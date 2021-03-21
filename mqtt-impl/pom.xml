@@ -23,7 +23,7 @@
     <parent>
         <groupId>co.macrometa.c8streams.handlers</groupId>
         <artifactId>mop-parent</artifactId>
-        <version>0.3.0</version>
+        <version>0.3.1</version>
     </parent>
 	
     <packaging>nar</packaging>
@@ -44,7 +44,7 @@
 		<url>https://github.com/Macrometacorp/c8streams-mop.git</url>
 		<connection>scm:git:git@github.com:Macrometacorp/c8streams-mop.git</connection>
 		<developerConnection>scm:git:git@github.com:Macrometacorp/c8streams-mop.git</developerConnection>
-		<tag>mop-0.3.0</tag>
+		<tag>mop-0.3.1</tag>
 	</scm>
 
 	<organization>
@@ -91,7 +91,59 @@
                 </executions>
             </plugin>
 
-			<plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>make-a-jar</id>
+                        <phase>compile</phase>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-install-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>Add-2-local-repository</id>
+                        <phase>package</phase>
+                        <configuration>
+                            <packaging>jar</packaging>                            
+                            <file>${project.build.directory}\${project.artifactId}-${project.version}.jar</file>
+                        </configuration>
+                        <goals>
+                            <goal>install-file</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>build-helper-maven-plugin</artifactId>
+                <version>1.7</version>
+                <executions>
+                    <execution>
+                        <id>attach-artifacts</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>attach-artifact</goal>
+                        </goals>
+                        <configuration>
+                            <artifacts>
+                                <artifact>
+                                    <file>${project.build.directory}/${project.artifactId}-${project.version}.jar</file>
+                                    <type>jar</type>
+                                </artifact>
+                            </artifacts>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
 				<artifactId>maven-deploy-plugin</artifactId>
 				<version>2.8.2</version>
 				<configuration>
